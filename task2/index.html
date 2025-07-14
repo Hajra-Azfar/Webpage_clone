@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/abd18701d6.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .parentdivcontainer {
+            display: grid;
+            background-color: #D6E6F2;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas:
+                "c1 c1 c1"
+                "c2 c2 c2"
+                "c3 c4 c5"
+                "c6 c7 c8";
+            gap: 20px;
+            padding: 20px;
+        }
+
+        #c1,
+        #c2,
+        #c3,
+        #c4,
+        #c5,
+        #c6,
+        #c7,
+        #c8 {
+            background-color: #D6E6F2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        #c1 {
+            grid-area: c1;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #c2 {
+            grid-area: c2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .rating-card {
+            background-color: white;
+            width: 100%;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+            line-height: 2rem;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .avatar {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .ratings {
+            margin: 10px 0;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        .review {
+            color: gray;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .author {
+            color: gray;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .section-header h1 {
+            margin: 0;
+        }
+
+        .divider {
+            width: 10%;
+            height: 2px;
+            background-color: #1a57a5;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .parentdivcontainer {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "c1"
+                    "c2"
+                    "c3"
+                    "c4"
+                    "c5"
+                    "c6"
+                    "c7"
+                    "c8";
+                gap: 10px;
+            }
+        }
+        .altcontainer {
+    position: fixed;
+    top:0;
+    display: grid;
+    z-index: 1;
+    grid-template-columns: auto auto;
+    height: 80px;
+    width: 100%;
+    padding: 0;
+    background-color: white;
+}
+
+.altlogo {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color:#1a57a5;
+}
+
+.altlinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.altlinks a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    padding: 0 20px;
+    line-height: 100px;
+}
+    </style>
+
+</head>
+
+<body>
+    <section id="home">
+        <div class="bgimage">
+            <div class="overlay"></div>
+            <div class="firstcontainer">
+                <nav>
+                    <div class="container" >
+                        <div class="logo">
+                            <h2>CARVILLA</h2>
+                            <span class="fa fa-bars" onclick="toggleMenu()"></span>
+                        </div>
+                        <div class="links" >
+
+                            <a href="#home">HOME</a>
+                            <a href="#features">Services</a>
+                            <a href="#pricing">Featured cars</a>
+                            <a href="#rewiews">New cars</a>
+                            <a href="#rewiews">brand</a>
+                            <a href="#contactus">Contact</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <main>uicookies.com Creates High <br> Quality Bootstrap Template For <br> Free</main>
+
+                <footer>
+                    <div style="display: flex;justify-content: center;align-items: center;flex-wrap: wrap;gap: 5px;">
+                        <button class="btn1"><a href="https://uicookies.com/"
+                                style="color: white;text-decoration: none;">Get them Now</a></button>
+                        <button class="btn2"
+                            style="background-color: transparent;border: 2px solid white;color: white;"><a
+                                href="#features" style="color: white;text-decoration: none;">See Features</a></button>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </section>
+    <section style="margin-top: 90px;margin-bottom: 90px;">
+        <nav class="altnav">
+            <div class="altcontainer" >
+                <div class="altlogo">
+                    <h2>FRAME</h2>
+                    <span class="fa fa-bars" onclick="toggleMenu()"></span>
+                </div>
+                <div class="altlinks">
+
+                    <a href="#home" style="color: black;">HOME</a>
+                    <a href="#features" style="color: black;">FEATURES</a>
+                    <a href="#pricing" style="color: black;">PRICING</a>
+                    <a href="#rewiews" style="color: black;">REVIEWS</a>
+                    <a href="#contactus" style="color: black;">CONTACT</a>
+                </div>
+            </div>
+        </nav>
+        <div class="cards"
+            style="display: flex;flex-direction: row;justify-content:space-evenly;align-items: center;flex-wrap: wrap;">
+            <div class="card"
+                style="display: flex;flex-direction: column;flex-wrap: wrap;width: 18em;text-align: justify;line-height: 2rem;padding: 14px;">
+                <img src="smartphone_212159.png" alt="" style="height: 90px;width: 90px;">
+
+                <h1 style="color: #1a57a5;">Mobile Optimize
+                </h1>
+
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+                    language ocean.</p>
+                <a href="">Learn More</a>
+            </div>
+
+
+            <div class="card"
+                style="display: flex;flex-direction: column;flex-wrap: wrap;width: 18em;text-align: justify;line-height: 2rem;padding: 14px;">
+                <img src="kindpng_4213376.png" alt="" style="height: 90px;width: 90px;">
+
+                <h1 style="color: #1a57a5;">Increase Revenue
+                </h1>
+
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+                    language ocean.</p>
+                <a href="">Learn More</a>
+            </div>
+
+
+            <div class="card"
+                style="display: flex;flex-direction: column;flex-wrap: wrap;width: 18em;text-align: justify;line-height: 2rem;padding: 14px;">
+                <img src="bulb.png" alt="" style="height: 90px;width: 90px;">
+
+                <h1 style="color: #1a57a5;">Smart Idea
+                </h1>
+
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+                    language ocean.</p>
+                <a href="">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container2">
+            <div id="row1" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                <h1 style="color: black;font-weight: lighter;font-size: 34px;">Features</h1>
+                <div style="color: #1a57a5;font-weight: bolder;margin-top: -23px;">________________</div>
+            </div>
+            <div id="row2" style="text-align: center;">Even the all-powerful Pointing has no control about the blind
+                texts it is an almost unorthographic life One <br> day however a small line of blind text by the name of
+                <br>Lorem Ipsum decided to leave for the far World of Grammar.</div>
+            <div id="row3">
+                <div class="con">
+                    <img src="feature1.jpg" alt="Description of Image" class="row3-img">
+                    <div class="row3-text">
+                        <h1 style="color: #1a57a5; font-weight: lighter;">Big Benefits for Small Business</h1>
+                        <p style="font-size: large;">
+                            A small river named Duden flows by their place <br> and supplies it with the necessary
+                            regelialia. It is a <br> paradisematic country, in which roasted parts of <br>sentences fly
+                            into your mouth.
+                        </p>
+                        <p style="font-size: large;"><span style="color: #1a57a5; margin-right: 9px;">✔</span>Pointing
+                            has no control</p>
+                        <p style="font-size: large;"><span style="color: #1a57a5; margin-right: 9px;">✔</span>A small
+                            river named Duden flows</p>
+                        <p style="font-size: large;"><span style="color: #1a57a5; margin-right: 9px;">✔</span>Roasted
+                            parts of sentences fly into your mouth</p>
+                    </div>
+                </div>
+            </div>
+            <div id="row4">
+                <div class="con">
+                    <div class="row4-text">
+                        <h1 style="color: #1a57a5; font-weight: lighter;">How Frame is <br>different</h1>
+                        <p style="font-size: large;">
+                            A small river named Duden flows by their place <br> and supplies it with the necessary
+                            regelialia. It is a <br> paradisematic country, in which roasted parts of <br>sentences fly
+                            into your mouth.
+                        </p>
+                        <p style="font-size: large;"><span style="color: #1a57a5; margin-right: 9px;">✔</span>Pointing
+                            has no control</p>
+                        <p style="font-size: large;"><span style="color: #1a57a5; margin-right: 9px;">✔</span>A small
+                            river named Duden flows</p>
+                        <p style="font-size: large;"><span style="color: #1a57a5; margin-right: 9px;">✔</span>Roasted
+                            parts of sentences fly into your mouth</p>
+                    </div>
+                    <img src="feature2.jpg" alt="Description of Image" class="row-img">
+                </div>
+            </div>
+            <div id="row5">
+                <div class="con">
+                    <img src="feature3.jpg" alt="Description of Image" class="row5-img">
+                    <div class="row5-text">
+                        <h1 style="color: #1a57a5; font-weight: lighter;">All in one Place</h1>
+                        <p style="font-size: large;">
+                            A small river named Duden flows by their place <br> and supplies it with the necessary
+                            regelialia. It is a <br> paradisematic country, in which roasted parts of <br>sentences fly
+                            into your mouth.
+                        </p>
+                        <p style="font-size: large;"><span style="color: #1a57a5; margin-right: 9px;">✔</span>Pointing
+                            has no control</p>
+                        <p style="font-size: large;"><span style="color: #1a57a5; margin-right: 9px;">✔</span>A small
+                            river named Duden flows</p>
+                        <p style="font-size: large;"><span style="color: #1a57a5; margin-right: 9px;">✔</span>Roasted
+                            parts of sentences fly into your mouth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" style="margin-top: 0;">
+        <div class="container1">
+            <div id="cont1" class="cont" style="display: flex;flex-direction: column;flex-wrap: wrap;">
+                <h1 style="font-size: 44px;">Choose the plan that's right for <br> your business</h1>
+                <div style="color:#1a57a5;font-weight:bold;">______________</div>
+            </div>
+            <div id="cont2" class="cont">
+                <p style="line-height: 2rem;">Even the all-powerful Pointing has no control about the blind texts it is
+                    an almost unorthographic life One <br> day however a small line of blind text by the name of <br>
+                    Lorem Ipsum decided to leave for the far World of Grammar.</p>
+            </div>
+            <div id="cont3" class="cont">
+                <div class="pricecard1">
+                    <h3 style="font-weight: lighter;">Starter</h3>
+                    <h1 style="color: #1a57a5;font-size: 44px;">$22.99</h1>
+                    <div>This is a monthly recurring payment.</div>
+                    <p> <span style="color: #1a57a5; margin-right: 9px;">✔</span>Pointing has no control</p>
+                    <p> <span style="color: #1a57a5; margin-right: 9px;">✔</span>A small river named Duden flows</p>
+                    <p><span style="color: #1a57a5; margin-right: 9px;">✔</span> Roasted parts of sentences fly into
+                        mouth </p>
+                    <button style="background-color: black;color: white;padding: 10px;"><a href="#home"
+                            style="text-decoration: none ;color: white;">Get Started</a></button>
+                </div>
+            </div>
+            <div id="cont4" class="cont">
+                <div class="pricecard2">
+                    <h3 style="font-weight: lighter;">Business</h3>
+                    <h1 style="color: #1a57a5;font-size: 44px;">$69.99</h1>
+                    <div>This is a monthly recurring payment.</div>
+                    <p> <span style="color: #1a57a5; margin-right: 9px;">✔</span>Pointing has no control</p>
+                    <p> <span style="color: #1a57a5; margin-right: 9px;">✔</span>A small river named Duden flows</p>
+                    <p><span style="color: #1a57a5; margin-right: 9px;">✔</span> Roasted parts of sentences fly into
+                        mouth</p>
+                    <button style="background-color: #1a57a5;color: white;padding: 10px;"><a href="#home"
+                            style="text-decoration: none ;color: white;">Get Started</a></button>
+                </div>
+            </div>
+            <div id="cont5" class="cont">
+                <div class="pricecard3">
+                    <h3 style="font-weight: lighter;">Premium</h3>
+                    <h1 style="color:#1a57a5;font-size: 44px;">$224.99</h1>
+                    <div>This is a monthly recurring payment.</div>
+                    <p> <span style="color: #1a57a5; margin-right: 9px;">✔</span>Pointing has no control</p>
+                    <p> <span style="color: #1a57a5; margin-right: 9px;">✔</span>A small river named Duden flows</p>
+                    <p><span style="color: #1a57a5; margin-right: 9px;">✔</span> Roasted parts of sentences fly into
+                        mouth</p>
+                    <button style="background-color:#6a0dad;color: white;padding: 10px;"><a href="#home"
+                            style="text-decoration: none ;color: white;">Get Started</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="rewiews" style="margin-top: 90px;">
+        <div class="parentdivcontainer">
+            <div id="c1" class="section-header">
+                <h1 style="font-size: 44px;line-height: 7rem;">That's why 100,000+ Love Frame</h1>
+                <div class="divider"></div>
+            </div>
+
+            <div id="c2" class="section-text">
+                Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.
+                One <br> day however, a small line of blind text by the name of <br> Lorem Ipsum decided to leave for
+                the far World of Grammar.
+            </div>
+
+            <div id="c3">
+                <div class="rating-card">
+                    <img src="person1.jpg" alt="Person" class="avatar">
+                    <div class="ratings" style="display: flex; color: orange;">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="review">
+                        Even the all-powerful Pointing has no control about the <br> blind texts it is an almost
+                        unorthographic life. One day <br>however a small line of blind text by the name of Lorem
+                        <br>Ipsum decided to leave for the far World of Grammar.
+                    </div>
+                    <div class="author">— Garry Alexander</div>
+                </div>
+            </div>
+
+            <div id="c4">
+                <div class="rating-card">
+                    <img src="person2.jpg" alt="Person" class="avatar">
+                    <div class="ratings" style="display: flex; color: orange;">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="review">
+                        Even the all-powerful Pointing has no control about the <br> blind texts it is an almost
+                        unorthographic life. One day <br>however a small line of blind text by the name of Lorem
+                        <br>Ipsum decided to leave for the far World of Grammar.
+                    </div>
+                    <div class="author">— James Robertson</div>
+                </div>
+            </div>
+
+            <div id="c5">
+                <div class="rating-card">
+                    <img src="person_3.jpg" alt="Person" class="avatar">
+                    <div class="ratings" style="display: flex; color: orange;">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="review">
+                        Even the all-powerful Pointing has no control about the <br> blind texts it is an almost
+                        unorthographic life. One day <br>however a small line of blind text by the name of Lorem
+                        <br>Ipsum decided to leave for the far World of Grammar.
+                    </div>
+                    <div class="author">— Ben Goodrich</div>
+                </div>
+            </div>
+
+            <div id="c6">
+                <div class="rating-card">
+                    <img src="person_4.jpg" alt="Person" class="avatar">
+                    <div class="ratings" style="display: flex; color: orange;">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="review">
+                        Even the all-powerful Pointing has no control about the <br> blind texts it is an almost
+                        unorthographic life. One day <br>however a small line of blind text by the name of Lorem
+                        <br>Ipsum decided to leave for the far World of Grammar.
+                    </div>
+                    <div class="author">— Kip Hugh</div>
+                </div>
+            </div>
+
+            <div id="c7">
+                <div class="rating-card">
+                    <img src="person_3.jpg" alt="Person" class="avatar">
+                    <div class="ratings" style="display: flex; color: orange;">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="review">
+                        Even the all-powerful Pointing has no control about the <br> blind texts it is an almost
+                        unorthographic life. One day <br>however a small line of blind text by the name of Lorem
+                        <br>Ipsum decided to leave for the far World of Grammar.
+                    </div>
+                    <div class="author">— James Robertson</div>
+                </div>
+            </div>
+
+            <div id="c8">
+                <div class="rating-card">
+                    <img src="person1.jpg" alt="Person" class="avatar">
+                    <div class="ratings" style="display: flex; color: orange;">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="review">
+                        Even the all-powerful Pointing has no control about the <br> blind texts it is an almost
+                        unorthographic life. One day <br>however a small line of blind text by the name of Lorem
+                        <br>Ipsum decided to leave for the far World of Grammar.
+                    </div>
+                    <div class="author">— Ben Goodrich</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div style="display: flex;flex-direction: column;text-align: center;margin-top: 20px;line-height: 2rem;">
+            <h1 style="font-size: 44px;">Try It Today</h1>
+            <div>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life
+                One <br>day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far
+                World of <br> Grammar.
+            </div>
+        </div>
+        <div style="display: flex;justify-content: center;align-items: center;margin-top: 12px;margin-bottom: 12px;">
+            <button style="border-radius: 0px;padding: 12px  35px;"><a href="#home"
+                    style="text-decoration: none ;color: white;">Get Started</a></button>
+        </div>
+
+    </section>
+    <section style="margin-top: 90px;">
+        <div class="holder" style="color: black;opacity: 0.7;">
+            <div id="picture">
+                <img src="comp.jpg" alt="feature image" style="  width: 85%;
+            height: auto;">
+            </div>
+            <div id="part1">
+                <h2 style="font-weight: lighter;"><span style="color: #1a57a5;padding-right: 8px;">✔</span>What is
+                    Instant?</h2>
+                <div style="font-size: 16px;">Even the all-powerful Pointing has no control about the blind texts it is
+                    an <br> almost unorthographic life One day however a small line of blind text by the <br>name of
+                    Lorem Ipsum decided to leave for the far World of Grammar. <br></div>
+            </div>
+            <div id="part2">
+                <h2 style="font-weight: lighter;"><span style="color: #1a57a5;padding-right: 8px;">✔</span>Is this
+                    available to my country?</h2>
+                <div style="font-size: 16px;">The Big Oxmox advised her not to do so, because there were thousands of
+                    <br> bad Commas, wild Question Marks and devious Semikoli, but the Little Blind <br>Text didn’t
+                    listen. She packed her seven versalia, put her initial into the belt <br> and made herself on the
+                    way.</div>
+            </div>
+            <div id="part3">
+                <h2 style="font-weight: lighter;"><span style="color: #1a57a5;padding-right: 8px;">✔</span>How do I use
+                    the new features of Frame App?</h2>
+                <div style="font-size: 16px;">On her way she met a copy. The copy warned the Little Blind Text, that
+                    where <br>it came from it would have been rewritten a thousand times and everything <br>that was
+                    left from its origin would be the word "and" and the Little Blind Text <br> should turn around and
+                    return to its own, safe country.</div>
+            </div>
+            <div id="part4">
+                <h2 style="font-weight: lighter;"><span style="color: #1a57a5;padding-right: 8px;">✔</span>I have
+                    technical problem who do I email?
+                </h2>
+                <div style="font-size: 16px;">But nothing the copy said could convince her and so it didn't take long
+                    until a <br> few insidious Copy Writers ambushed her, made her drunk with Longe and <br> Parole and
+                    dragged her into their agency, where they abused her for their.</div>
+            </div>
+        </div>
+    </section>
+
+
+    <section style="background-color:#1a57a5;margin-top: 90px;">
+        <div
+            style="display: flex;flex-direction: column; justify-content: center;align-items: center;text-align: center;line-height: 2rem;flex-wrap: wrap;">
+            <h1 style="color: white;font-size: 34px;font-weight: bold;">Join With Over 100K Members</h1>
+            <p style="color: white;opacity: 0.7;">But nothing the copy said could convince her and so it didn't take
+                long until a few insidious Copy Writers <br> ambushed her, made her drunk with Longe and Parole and
+                dragged her into their agency, where they <br> abused her for their. <br></p>
+            <button
+                style="background-color: black;color: white;border: 2px solid black;padding-right: 30px;padding-left: 30px;padding-top: 15px;padding-bottom:15px ;margin-bottom: 20px;"><a
+                    href="#home" style="text-decoration: none ;color: white;">Get Started</a></button>
+        </div>
+    </section>
+
+
+
+    <section id="contactus">
+        <div class="formcontainer">
+            <div id="form" style="margin-top: 90px;">
+                <div class="form">
+                    <form>
+                        <h1>Get In Touch</h1>
+                        <input type="text" placeholder="Your Name">
+                        <input type="text" placeholder="Your Email">
+                        <input type="text" placeholder="Your Phone No">
+                        <input type="text" placeholder="Write a Message" class="Message">
+                        <button>Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div id="contact" style="margin-top: 90px;">
+                <p style="color: #ccc;opacity: 0.7;">EMAIL</p>
+                <div>probootstrap@gmail.com</div><br>
+                <p style="color: #ccc;opacity: 0.7;">PHONE</p>
+                <div>+30 976 1382 9921</div> <br>
+                <p style="color: #ccc;opacity: 0.7;">FAX</p>
+                <div>+30 976 1382 9922</div><br>
+                <p style="color: #ccc;opacity: 0.7;">ADDRESS</p>
+                <p>San Francisco, CA <br>
+                    4th Floor, 8 Lower <br>
+                    San Francisco Street, M1 50F</p>
+            </div>
+        </div>
+    </section st>
+    <section class="last" style="display: flex;flex-direction: column;height:50vh;">
+        <div class="icons" style="display: flex;flex-wrap: wrap;margin-top: 20px;">
+            <i class="fa-brands fa-twitter fa-xs" style="font-size: 24px;"></i>
+            <i class="fa-brands fa-facebook fa-xs"  style="font-size: 24px;"></i>
+            <i class="fa-brands fa-instagram"  style="font-size: 24px;"></i>
+            <i class="fa-brands fa-linkedin fa-xs"  style="font-size: 24px;"></i>
+
+
+        </div>
+        <div class="footercontent" style="line-height: 3rem;">
+            <div>© 2019 Frame. All Rights Reserved.</div>
+            <div>Designed & <a
+                    href="https://themeforest.net/category/site-templates?clickid=TRXXV1WdYxyPUHVSfDz1MWvyUkCx3pSMqzZ80g0&iradid=275988&iradtype=ONLINE_TRACKING_LINK&irgwc=1&irmptype=mediapartner&irpid=1297116&sort=sales&utm_campaign=af_impact_radius_1297116&utm_medium=affiliate&utm_source=impact_radius"
+                    class="bootstrap">Bootstrap templates </a>by uiCookies</div>
+            <div>Demo Images by <a
+                    href="https://themeforest.net/category/site-templates?clickid=TRXXV1WdYxyPUHVSfDz1MWvyUkCx3pSMqzZ80g0&iradid=275988&iradtype=ONLINE_TRACKING_LINK&irgwc=1&irmptype=mediapartner&irpid=1297116&sort=sales&utm_campaign=af_impact_radius_1297116&utm_medium=affiliate&utm_source=impact_radius"
+                    class="bootstrap">Unsplash</a> </div>
+        </div>
+    </section>
+   
+
+
+
+
+    <!-- JavaScript to toggle menu -->
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.fa');
+            menu.classList.toggle('open');
+            var links = document.querySelector('.links');
+            if (menu.classList.contains('open')) {
+                links.style.display = 'flex';
+            } else {
+                links.style.display = 'none';
+            }
+        }
+  function handleScroll() {
+    var images = document.querySelectorAll('.row-img, .row3-img, .row5-img');
+
+    images.forEach(function(image) {
+      var imageTop = image.getBoundingClientRect().top;
+      var imageBottom = image.getBoundingClientRect().bottom;
+      var windowHeight = window.innerHeight;
+
+      // Check if the element is within the viewport
+      if (imageTop < windowHeight && imageBottom > 0) {
+        image.classList.add('animate'); // Add class to animate
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('load', handleScroll);
+</script>
+<script>
+    function handleScroll() {
+  var cards = document.querySelectorAll('.card');
+
+  cards.forEach(function(card) {
+    var cardTop = card.getBoundingClientRect().top;
+    var cardBottom = card.getBoundingClientRect().bottom;
+    var windowHeight = window.innerHeight;
+
+    // Check if the element is within the viewport
+    if (cardTop < windowHeight && cardBottom > 0) {
+      card.classList.add('animate'); // Add class to animate
+    }
+  });
+}
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handleScroll); // Check on page load
+
+</script>
+        
+
+
+
+</body>
+
+</html>
